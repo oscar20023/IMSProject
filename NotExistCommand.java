@@ -1,6 +1,4 @@
-/**
- * Created by kazuki on 2017/11/07.
- */
+
 public class NotExistCommand implements Command {
 
     @Override

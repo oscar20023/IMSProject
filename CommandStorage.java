@@ -1,8 +1,5 @@
 import java.util.HashMap;
 
-/**
- * Created by kazuki on 2017/11/10.
- */
 public class CommandStorage implements Storage {
     //store the long form of CommandCreator
     private String[] storageLF = {"CreateCreator","ShowCreator","ReceiveCreator","DistributeCreator"

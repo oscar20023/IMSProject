@@ -2,9 +2,6 @@ import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Set;
 
-/**
- * Created by kazuki on 2017/11/10.
- */
 public class CommandOptions {
     Record rec;
     CareTaker care;
