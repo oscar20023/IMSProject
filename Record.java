@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Vector;
 
-
+/**
+ * Created by kazuki on 2017/10/31.
+ */
 public class Record {
 
     LinkedList record = new LinkedList();

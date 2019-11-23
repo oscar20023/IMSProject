@@ -5,6 +5,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Created by kazuki on 2017/11/04.
+ */
 public class InstantNoodleCreator implements FoodItemCreator {
     String[] detail = new String[3];
     @Override

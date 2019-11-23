@@ -1,4 +1,6 @@
-
+/**
+ * Created by kazuki on 2017/11/07.
+ */
 public class ExitCommand implements Command {
 
     @Override

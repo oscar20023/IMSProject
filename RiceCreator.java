@@ -5,7 +5,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
+/**
+ * Created by kazuki on 2017/10/31.
+ */
 public class RiceCreator implements FoodItemCreator {
     String[] detail = new String[3];
 

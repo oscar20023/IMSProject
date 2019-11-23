@@ -1,5 +1,8 @@
 import java.util.Vector;
 
+/**
+ * Created by kazuki on 2017/11/07.
+ */
 public class DisplayListCommand implements Command{
     Record rec;
 
