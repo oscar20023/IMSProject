@@ -1,6 +1,4 @@
-/**
- * Created by kazuki on 2017/11/07.
- */
+
 public class RedoCommand implements Command {
     CareTaker care;
     Record rec;

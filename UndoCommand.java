@@ -1,8 +1,5 @@
 import java.util.Vector;
 
-/**
- * Created by kazuki on 2017/11/07.
- */
 public class UndoCommand implements Command {
     Record rec;
     CareTaker care;

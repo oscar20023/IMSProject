@@ -1,6 +1,4 @@
-/**
- * Created by kazuki on 2017/11/10.
- */
+
 public class DistributeCreator implements CommandCreator{
     Record rec;
     CareTaker care;

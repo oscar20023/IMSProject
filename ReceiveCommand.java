@@ -4,9 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Created by kazuki on 2017/11/07.
- */
+
 public class ReceiveCommand implements Command {
     CareTaker care;
     Record rec;
