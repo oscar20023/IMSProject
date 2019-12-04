@@ -1,0 +1,2 @@
+ID	Name	Quantity	Other Info
+100	100	0	Type	100

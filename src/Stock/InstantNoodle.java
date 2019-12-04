@@ -19,4 +19,8 @@ public class InstantNoodle extends FoodItem {
     public String toString() {
         return getItemID()+"\t\t"+getName()+"\t\t\t\t"+getBalance()+"\t\t"+getWeight();
     }
+    
+    public String tableize() {
+    	return getItemID()+ "\t" +getName()+ "\t" + getBalance() + "\t" + "Weight" + "\t" + getWeight();
+    }
 }

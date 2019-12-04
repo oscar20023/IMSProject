@@ -35,4 +35,8 @@ public class FoodItem {
     public String toString() { //item detail
         return null;
     }
+    
+    public String tableize() {
+    	return null;
+    }
 }

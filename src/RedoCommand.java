@@ -10,7 +10,7 @@ public class RedoCommand implements Command {
 
     @Override
     public void execute() {
-        if(rec != null&&rec._redo != null && rec._redo.size() > 0) {
+        if(rec != null&&rec.get_redo() != null && rec.get_redo().size() > 0) {
             rec.getComFromMemento(care.getMementoRedo());
             Command c = rec.getCom();
             rec.rm_redo(c.toString());

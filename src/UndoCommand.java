@@ -11,7 +11,7 @@ public class UndoCommand implements Command {
 
     @Override
     public void execute() {
-        if(rec != null&&rec._undo != null && rec._undo.size() > 0) {
+        if(rec != null && rec.get_undo() != null && rec.get_undo().size() > 0) {
             rec.getComFromMemento(care.getMementoUndo()); //set to the last command
             Command c = rec.getCom(); //get command
             c.undo(); //undo command
