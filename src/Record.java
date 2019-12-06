@@ -9,26 +9,11 @@ import java.util.Vector;
 
 public class Record {
 
-    LinkedList record = new LinkedList();
+    LinkedList<FoodItem>record = new LinkedList<FoodItem>();
     Vector _undo = new Vector();
     Vector _redo = new Vector();
     Command com;
 
-    private static Record instance;
-    
-    private Record() {
-    	
-    }
- 
-    
-    public static Record getInstance() {
-    	if (instance == null) {
-    		instance = new Record();
-    	}
-    	return instance;
-    }
-    
-    
     public LinkedList getRecord() {
         return record;
     }
@@ -38,6 +23,12 @@ public class Record {
         try {
             fI = fIC.createMethod();
             if(fI != null) {
+            	for(int i=0;i<record.size();i++) {
+            		if(fI.getItemID() == record.get(i).getItemID()) {
+            			System.out.println("Item ID has already existed. Please change the ID. \n");
+            			return null;
+            		}
+            	}
                 record.add(fI);
                 System.out.println("New item record created.\n");
             }

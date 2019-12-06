@@ -3,7 +3,7 @@ import java.util.HashMap;
 public class FoodTypeStorage implements Storage {
 
     private final static String[] storageLF = {"RiceCreator","InstantNoodleCreator"};
-    private final static String[] storageSF = {"ri","in"};
+    private final static String[] storageSF = {"ri","in","dr"};
     
     private static HashMap<String, String> map;
     private static FoodTypeStorage instance = null;

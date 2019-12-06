@@ -30,6 +30,7 @@ public class ReceiveCommand implements Command {
                     fI = (FoodItem)rec.getRecord().get(checked);
                     System.out.println("Quantity to receive :");
                     //input a number that want to be operate
+                    if(qty>0) {
                     qty = Integer.parseInt(br.readLine());
                     process();
                     System.out.println("Received "+qty+" packs of "+fI.getItemID()
@@ -37,6 +38,8 @@ public class ReceiveCommand implements Command {
                     rec.add_undo(this.toString());
                     rec.setCom(this);
                     care.addMementoUndo(rec.saveComToMemento());
+                    }else
+                    System.out.println("The Input Quantity is not appropriate. ");
                 } else
                     System.out.println("no record found.");
             } else

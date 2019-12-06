@@ -83,7 +83,11 @@ public class Main {
 	
     public static char getRequest() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-         return (char) br.read();
+          String cmd=br.readLine();
+                if(cmd.length()>1) {
+                    return (char)0;
+                }
+                return cmd.charAt(0);
     }
 
 }

@@ -19,7 +19,7 @@ public class CreateCommand implements Command {
 	@Override
 	public void execute() {
 		FoodItemCreator fIC = null;
-		System.out.println("Enter food type (ri=rice/in=instant noodle)");
+		System.out.println("Enter food type (ri=rice/in=instant noodle/dr=drink)");
 		InputStreamReader is = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(is);
 		try {
