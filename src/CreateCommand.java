@@ -19,11 +19,11 @@ public class CreateCommand implements Command {
 	@Override
 	public void execute() {
 		FoodItemCreator fIC = null;
-		System.out.println("Enter food type (ri=rice/in=instant noodle)");
+		System.out.println("Enter food type: [ri = Rice, in = Instance Noodle]");
 		InputStreamReader is = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(is);
 		try {
-			String str = br.readLine();//read line
+			String str = br.readLine().trim();//read line
 			Object obj = fts.getMap().get(str);//get object from HashMap
 			if(obj != null) {
 				str = obj.toString();//get class name
@@ -51,7 +51,7 @@ public class CreateCommand implements Command {
 
 	@Override
 	public void process() {
-		rec.record.add(fI);
+		rec.getRecord().add(fI);
 	}
 
 	@Override

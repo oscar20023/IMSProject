@@ -49,13 +49,19 @@ public class ShowCommand implements Command {
 	}
 	
 	public void single(String str) {
-		int pos = rec.searchRecord(Integer.parseInt(str));
-		if(pos != rec.getRecord().size()) {
-			FoodItem tmp = (FoodItem)rec.getRecord().get(pos);
-			simpleDisplay(tmp);
-			rec.singleDisplay(tmp);
-		} else
-			System.out.println("no record found.");
+		try {
+			Integer.parseInt(str);
+			
+			int pos = rec.searchRecord(str);
+			if(pos != rec.getRecord().size()) {
+				FoodItem tmp = (FoodItem)rec.getRecord().get(pos);
+				simpleDisplay(tmp);
+				rec.singleDisplay(tmp);
+			} else
+				System.out.println("no record found.");
+		} catch (NumberFormatException e) {
+            System.out.println("Input Error. Please try again.\n");
+		}	
 	}
 
 	public void displayHeader() {
@@ -63,9 +69,9 @@ public class ShowCommand implements Command {
 	}
 
 	public void simpleDisplay(FoodItem fI) {
-		System.out.println("ID : "+fI.getItemID());
-		System.out.println("Name : "+fI.getName());
-		System.out.println("Quantity : "+fI.getBalance());
+		System.out.println("ID : " + fI.getItemID());
+		System.out.println("Name : " + fI.getName());
+		System.out.println("Quantity : " + fI.getBalance());
 	}
 
 }

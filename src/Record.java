@@ -9,26 +9,24 @@ import java.util.Vector;
 
 public class Record {
 
-    LinkedList record = new LinkedList();
-    Vector _undo = new Vector();
-    Vector _redo = new Vector();
-    Command com;
+	private LinkedList record = new LinkedList();
+	private Vector _undo = new Vector();
+	private Vector _redo = new Vector();
+	private Command com;
 
     private static Record instance;
     
     private Record() {
     	
     }
- 
-    
+   
     public static Record getInstance() {
     	if (instance == null) {
     		instance = new Record();
     	}
     	return instance;
     }
-    
-    
+      
     public LinkedList getRecord() {
         return record;
     }
@@ -51,9 +49,9 @@ public class Record {
         record.remove(id);
     }
 
-    public int searchRecord(int id) {
+    public int searchRecord(String id) {
         for(int i = 0; i < record.size();i++)
-            if(((FoodItem)record.get(i)).getItemID() == id)
+            if(((FoodItem)record.get(i)).getItemID().compareTo(id) == 0)
                 return i;
         return record.size();
     }
@@ -73,12 +71,13 @@ public class Record {
         FoodItem[] tmp = new FoodItem[record.size()];
         for(int i = 0; i < record.size();i++)
             tmp[i] = (FoodItem) record.get(i);
-        System.out.println("ID\t\tName\t\t\t\tQuantity\t\tOther Info");
+
+        System.out.printf("%-20s%-12s%-30s%-12s%s\n", "Category", "ID", "Name", "Quantity", "Other Info");
         for(int i = 0; i < tmp.length;i++)
             System.out.println(tmp[i].toString());
     }
 
-    public void editQuantity(int qty,int id) {
+    public void editQuantity(int qty, String id) {
         int pos = searchRecord(id);
         if(pos != record.size())
             ((FoodItem)record.get(pos)).setBalance(((FoodItem)record.get(pos)).getBalance()+qty);

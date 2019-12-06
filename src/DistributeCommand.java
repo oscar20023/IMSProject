@@ -5,9 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class DistributeCommand implements Command {
-    CareTaker care;
-    Record rec;
-    private int qty,id;
+	private CareTaker care;
+	private Record rec;
+    private int qty;
+    private String id;
     private FoodItem fI;
 
     public DistributeCommand(Record rec, CareTaker care) {
@@ -23,7 +24,10 @@ public class DistributeCommand implements Command {
                 //select item by searching the item ID
                 InputStreamReader is = new InputStreamReader(System.in);
                 BufferedReader br = new BufferedReader(is);
-                id = Integer.parseInt(br.readLine());//get ID
+                id = br.readLine();
+                
+                Integer.parseInt(id);//get ID
+                
                 int checked = rec.searchRecord(id);//find ID that existed
                 if(checked != rec.getRecord().size()) {//when item found
                     System.out.println("Quantity to distribute :");
