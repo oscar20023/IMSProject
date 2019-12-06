@@ -2,4 +2,6 @@
 *.class
 *.bak
 *.txt
+bin/Stock/*.class
 bin/*.class
+.classpath
