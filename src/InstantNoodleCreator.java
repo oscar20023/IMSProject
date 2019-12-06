@@ -21,14 +21,16 @@ public class InstantNoodleCreator implements FoodItemCreator {
         String line = getInfo();
         for(int i = 0; i < line.length(); i++) {
             if(line.charAt(i) == ',') {
-                detail[tmp] = line.substring(param, i);
+                detail[tmp] = line.substring(param, i).trim();
                 param = i+1;
                 tmp++;
             }
         }
-        detail[tmp] = line.substring(param, line.length());
+        detail[tmp] = line.substring(param, line.length()).trim();
         try {
-            InstantNoodle i = new InstantNoodle(Integer.parseInt(detail[0]),detail[1]);
+        	Integer.parseInt(detail[0]);
+        	
+            InstantNoodle i = new InstantNoodle(detail[0], detail[1]);
             i.setWeight(Integer.parseInt(detail[2]));
             return i;
         } catch (NumberFormatException e) {

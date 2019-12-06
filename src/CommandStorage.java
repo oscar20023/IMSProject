@@ -3,9 +3,9 @@ import java.util.HashMap;
 public class CommandStorage implements Storage {
     //store the long form of CommandCreator
     private final static String[] storageLF = {"CreateCreator","ShowCreator","ReceiveCreator","DistributeCreator"
-            ,"UndoCreator","RedoCreator","DisplayListCreator","ExitCreator"};
+            ,"UndoCreator","RedoCreator","DisplayListCreator","ExitCreator", "Output as CSV"};
     //store the short form of CommandCreator
-    private final static char[] storageSF = {'c','s','g','d','u','r','l','x'};
+    private final static char[] storageSF = {'c','s','g','d','u','r','l','x','o'};
     
     private static HashMap<Character, String> map;
     private static CommandStorage instance = null;

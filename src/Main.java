@@ -37,7 +37,7 @@ public class Main {
                     com = tmp.newCommand(); //new the matching command
                     com.execute();
                 } else if ('o' == c) {
-                	int size = record.record.size();
+                	int size = record.getRecord().size();
                 	String filename = System.getProperty("user.dir") + "\\Report_" + 
                 						LocalDateTime.now().toString().replace(':', '-')
                 						+ ".txt";
@@ -51,7 +51,7 @@ public class Main {
 	            	    	writer.write("ID\tName\tQuantity\tOther Info\tValue\n");
 	
 	                	    for(int i = 0; i < size; i++) {
-	                	    	writer.write(((FoodItem) record.record.get(i)).tableize());
+	                	    	writer.write(((FoodItem) record.getRecord().get(i)).tableize());
 	                	    }                	    
 	                	    
 	                	    System.out.print("Report located in : " + filename + '\n');
@@ -66,9 +66,10 @@ public class Main {
 	                    System.out.println("Item List have no record.\n");
 	                }
                 
-                } else // if no matched result
-                    System.out.println("Command not found.\n");
-                
+                } else {// if no matched result
+                    System.out.println("Command not found. See the below hints:");
+                    System.out.println("c = Create Item\t  s = Show Item\t  g = Receive Item\t\t  d = Distribute Item \nu = Undo\t  r = Redo\t  l = List Command History\t  x = Exit System\t  o = Output as CSV\n");
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -76,9 +77,8 @@ public class Main {
     }
 
     public static void createMenu(String str) {
-        System.out.println("Advanced Inventory Management System");
-        System.out.println("Please enter command: ["+ str +"]");
-        System.out.println("c = create item,  s = show item,  g = receive item,  d = distribute item \n u = undo,  r = redo,  l = list undo/redo,  x = exit system,  o = output as CSV");
+        System.out.println("Inventory Management System");
+        System.out.println("Enter a Command: ["+ str +"]");
     }
 	
     public static char getRequest() throws IOException {

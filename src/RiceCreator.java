@@ -20,14 +20,16 @@ public class RiceCreator implements FoodItemCreator {
         String line = getInfo();
         for(int i = 0; i < line.length(); i++) {
             if(line.charAt(i) == ',') {
-                detail[tmp] = line.substring(param, i);
+                detail[tmp] = line.substring(param, i).trim();
                 param = i+1;
                 tmp++;
             }
         }
-        detail[tmp] = line.substring(param, line.length());
+        detail[tmp] = line.substring(param, line.length()).trim();
         try {
-            Rice r = new Rice(Integer.parseInt(detail[0]), detail[1]);
+        	Integer.parseInt(detail[0]);
+        	
+            Rice r = new Rice(detail[0], detail[1]);
             r.setType(detail[2]);
             return r;
         } catch (NumberFormatException e) {
