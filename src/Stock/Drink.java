@@ -4,7 +4,7 @@ public class Drink extends FoodItem {
 
     private String type;
 
-    public Drink(int itemID, String name) {
+    public Drink(String itemID, String name) {
         super(itemID, name);
     }
 
@@ -17,6 +17,6 @@ public class Drink extends FoodItem {
     }
 
     public String toString() {
-        return getItemID()+"\t\t"+getName()+"\t\t\t\t"+getBalance()+"\t\t"+getType();
+    	return String.format("%-20s%-12s%-30s%-12d%s", "Drink", getItemID(), getName(), getBalance(), getType());
     }
 }

@@ -37,7 +37,7 @@ public class Record {
             fI = fIC.createMethod();
             if(fI != null) {
             	for(int i=0;i<record.size();i++) {
-            		if(fI.getItemID() == record.get(i).getItemID()) {
+            		if(fI.getItemID().compareTo(((FoodItem) record.get(i)).getItemID()) == 0) {
             			System.out.println("Item ID has already existed. Please change the ID. \n");
             			return null;
             		}

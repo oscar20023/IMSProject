@@ -27,6 +27,7 @@ public class CreateCommand implements Command {
 		try {
 			String str = br.readLine().trim();//read line
 			Object obj = fts.getMap().get(str);//get object from HashMap
+			
 			if(obj != null) {
 				str = obj.toString();//get class name
 				try {
