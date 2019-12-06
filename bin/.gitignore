@@ -1,9 +1,3 @@
-/CareTaker.class
-/Command.class
-/CommandCreator.class
-/CommandOptions.class
-/CommandStorage.class
-/CreateCommand.class
 /CreateCreator.class
 /DisplayListCommand.class
 /DisplayListCreator.class

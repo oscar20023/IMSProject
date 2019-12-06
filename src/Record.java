@@ -14,6 +14,21 @@ public class Record {
     Vector _redo = new Vector();
     Command com;
 
+    private static Record instance;
+    
+    private Record() {
+    	
+    }
+ 
+    
+    public static Record getInstance() {
+    	if (instance == null) {
+    		instance = new Record();
+    	}
+    	return instance;
+    }
+    
+    
     public LinkedList getRecord() {
         return record;
     }
