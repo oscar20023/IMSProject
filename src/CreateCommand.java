@@ -9,7 +9,7 @@ public class CreateCommand implements Command {
 	CareTaker care;
 	Record rec;
 	private FoodItem fI;
-	private FoodTypeStorage fts = new FoodTypeStorage();
+	private FoodTypeStorage fts = FoodTypeStorage.getInstance();
 
 	public CreateCommand(Record rec, CareTaker care) {
 		this.rec = rec;

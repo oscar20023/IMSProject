@@ -19,4 +19,8 @@ public class Rice extends FoodItem {
     public String toString() {
         return getItemID()+"\t\t"+getName()+"\t\t\t\t"+getBalance()+"\t\t"+getType();
     }
+    
+    public String tableize() {
+    	return getItemID()+ "\t" +getName()+ "\t" + getBalance() + "\t" + "Type" + "\t" + getType();
+    }
 }
