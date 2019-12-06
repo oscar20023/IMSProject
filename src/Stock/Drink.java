@@ -1,10 +1,10 @@
 package Stock;
 
-public class Rice extends FoodItem {
+public class Drink extends FoodItem {
 
     private String type;
 
-    public Rice(int itemID, String name) {
+    public Drink(int itemID, String name) {
         super(itemID, name);
     }
 

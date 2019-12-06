@@ -9,7 +9,7 @@ public class CreateCommand implements Command {
 	CareTaker care;
 	Record rec;
 	private FoodItem fI;
-	private FoodTypeStorage fts = FoodTypeStorage.getInstance();
+	private FoodTypeStorage fts = new FoodTypeStorage();
 
 	public CreateCommand(Record rec, CareTaker care) {
 		this.rec = rec;
@@ -19,7 +19,7 @@ public class CreateCommand implements Command {
 	@Override
 	public void execute() {
 		FoodItemCreator fIC = null;
-		System.out.println("Enter food type (ri=rice/in=instant noodle)");
+		System.out.println("Enter food type (ri=rice/in=instant noodle/dr=drink)");
 		InputStreamReader is = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(is);
 		try {

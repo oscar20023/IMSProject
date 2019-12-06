@@ -31,12 +31,15 @@ public class ReceiveCommand implements Command {
                     System.out.println("Quantity to receive :");
                     //input a number that want to be operate
                     qty = Integer.parseInt(br.readLine());
+                    if(qty>0) {
                     process();
                     System.out.println("Received "+qty+" packs of "+fI.getItemID()
                             +". Current quantity is "+fI.getBalance()+".");
                     rec.add_undo(this.toString());
                     rec.setCom(this);
                     care.addMementoUndo(rec.saveComToMemento());
+                    }else
+                    	System.out.println("The Input Quantity is not appropriate. ");
                 } else
                     System.out.println("no record found.");
             } else

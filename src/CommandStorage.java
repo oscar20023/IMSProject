@@ -2,30 +2,21 @@ import java.util.HashMap;
 
 public class CommandStorage implements Storage {
     //store the long form of CommandCreator
-    private final static String[] storageLF = {"CreateCreator","ShowCreator","ReceiveCreator","DistributeCreator"
+    private String[] storageLF = {"CreateCreator","ShowCreator","ReceiveCreator","DistributeCreator"
             ,"UndoCreator","RedoCreator","DisplayListCreator","ExitCreator"};
     //store the short form of CommandCreator
-    private final static char[] storageSF = {'c','s','g','d','u','r','l','x'};
-    
-    private static HashMap<Character, String> map;
-    private static CommandStorage instance = null;
-    		
-    private CommandStorage() {
+    private char[] storageSF = {'c','s','g','d','u','r','l','x'};
+    private HashMap map;
+
+    public CommandStorage() {
         //save SF and LF as Key and Value
         map = new HashMap<Character,String>();
         for (int i = 0; i < storageLF.length; i++) {
             map.put(storageSF[i],storageLF[i]);
         }
     }
-    
-    public static CommandStorage getInstance() {
-    	if (null == instance) {
-    		instance = new CommandStorage();
-    	}
-    	return instance;
-    }
 
-    public HashMap<Character, String> getMap() { 
+    public HashMap getMap() {
         return map;
     }
 

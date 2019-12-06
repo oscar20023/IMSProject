@@ -30,15 +30,17 @@ public class DistributeCommand implements Command {
                     //input a number that want to be operate
                     qty = Integer.parseInt(br.readLine());
                     fI = (FoodItem)rec.getRecord().get(checked);
-                    if(qty <= fI.getBalance()){//when quantity < Balance
+                    if(qty <0) {
+                    	System.out.println("The Input Quantity is not appropriate. ");
+                    }else if(qty <= fI.getBalance()){//when quantity < Balance
                         process();
                         System.out.println("Distributed "+qty+" packs of "+fI.getItemID()
                                 +". Current quantity is "+fI.getBalance()+".");
                         rec.add_undo(this.toString());
                         rec.setCom(this);
                         care.addMementoUndo(rec.saveComToMemento());
-                    } else
-                        System.out.println("Quantity is larger then the Item balance.Operation Fail.\n");
+                    	}
+                     else System.out.println("Quantity is larger then the Item balance.Operation Fail.\n");
                 } else
                     System.out.println("no record found.");
             } else
