@@ -2,3 +2,4 @@
 *.class
 *.bak
 *.txt
+bin/*.class
