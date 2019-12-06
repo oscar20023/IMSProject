@@ -17,7 +17,7 @@ import Stock.FoodItem;
 public class Main {
     public static void main(String[]args) {
         CommandStorage cs = CommandStorage.getInstance(); //create a command list
-        Record record = new Record();
+        Record record = Record.getInstance();
         CareTaker careTaker = new CareTaker();
         Command com;
         BufferedWriter writer = null;
